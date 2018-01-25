@@ -10,7 +10,8 @@ class Menu extends React.Component {
     return (
       <div className="mainMenu">
         <NavLink to="/ohms-law">Ohms Law</NavLink>
-        <NavLink to="/radio-waves">Wavelength</NavLink>
+        <NavLink to="/wavelength">Wavelength</NavLink>
+        <NavLink to="/tank-circuit">Tank Circuit</NavLink>
       </div>
     );
   }

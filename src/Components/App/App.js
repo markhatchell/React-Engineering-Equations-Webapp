@@ -3,7 +3,8 @@ import './App.css';
 import Menu from "../Menu/Menu";
 import { Route, Switch } from 'react-router-dom'
 import OhmsLawComponent from "../OhmsLaw/OhmsLaw";
-import RadioEquationsComponent from "../RadioEquations/RadioEquations";
+import WavelengthComponent from "../WavelengthComponent/WavelengthComponent";
+import TankCircuitComponent from "../TankCircuitComponent/TankCircuitComponent";
 
 
 
@@ -20,7 +21,8 @@ class App extends Component {
         <Menu/>
         <Switch>
           <Route path="/ohms-law" component={OhmsLawComponent}/>
-          <Route path="/radio-waves" component={RadioEquationsComponent}/>
+          <Route path="/wavelength" component={WavelengthComponent}/>
+          <Route path="/tank-circuit" component={TankCircuitComponent}/>
         </Switch>
       </div>
     );

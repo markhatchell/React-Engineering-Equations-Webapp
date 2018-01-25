@@ -1,23 +1,23 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import RadioEquationsComponent from "./RadioEquations";
+import WavelengthComponent from "./WavelengthComponent";
 import {shallow, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 
 configure({ adapter: new Adapter() });
 
 const dom = renderer.create(
-  <RadioEquationsComponent />,
+  <WavelengthComponent />,
 );
 
-describe('RadioEquationsComponent', () => {
+describe('WavelengthComponent', () => {
 
   test('snapshot matches', () => {
     let tree = dom.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  const component = shallow(<RadioEquationsComponent />);
+  const component = shallow(<WavelengthComponent />);
   const instance = component.instance();
 
 

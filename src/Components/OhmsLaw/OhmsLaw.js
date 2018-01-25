@@ -21,7 +21,7 @@ class OhmsLawComponent extends BaseEquation {
       <div className="equationBox">
         <h3>Ohms Law</h3>
         <div className="equationBoxInner">
-          <p>Supply at least two of the values to calculate the third.</p>
+          <p>Supply at least two of the values to calculate the others.</p>
           <div className="tableContainer">
             <form onSubmit={(e) => this.handleSubmit(e)}>
               <table className="table">

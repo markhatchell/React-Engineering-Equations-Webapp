@@ -3,7 +3,7 @@ import BaseEquation from "../BaseEquation";
 import { Wavelength } from 'js-electrical-engineering-equations';
 import '../../Styles/Equations.css';
 
-class RadioEquationsComponent extends BaseEquation {
+class WavelengthComponent extends BaseEquation {
 
   constructor(props) {
     super(props);
@@ -140,4 +140,4 @@ class RadioEquationsComponent extends BaseEquation {
 }
 
 
-export default RadioEquationsComponent;
+export default WavelengthComponent;

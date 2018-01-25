@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RadioEquationsComponent snapshot matches 1`] = `
+exports[`WavelengthComponent snapshot matches 1`] = `
 <div
   className="equationBox"
 >
