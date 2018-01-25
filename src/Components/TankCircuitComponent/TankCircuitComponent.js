@@ -14,7 +14,6 @@ class TankCircuitComponent extends BaseEquation {
       frequencyInHertz: '',
       inductanceInNanoHenries: '',
       capacitanceInPicoFarads: '',
-      watts: '',
       lastCalculated: []
     }
   }
