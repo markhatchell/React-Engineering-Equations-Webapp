@@ -1,0 +1,35 @@
+.mainMenu {
+    position: relative;
+    display: block;
+    margin:0;
+    padding: 0;
+    border-bottom: 2px solid lightgrey;
+}
+
+.mainMenu a:first-child {
+    border-left: 2px solid lightgrey;
+}
+.mainMenu a {
+    text-decoration: none;
+    color: cornflowerblue;
+}
+.mainMenu a:visited {
+    color: cornflowerblue;
+}
+.mainMenu a:hover {
+    color: #63c4ff;
+}
+.mainMenu a:active {
+    color: #485c9b;
+}
+
+.mainMenu a {
+    position: relative;
+    padding: 5px 10px;
+    display: inline-block;
+    border-right: 2px solid lightgrey;
+}
+.mainMenu a.active {
+    border-bottom: 5px solid lightgrey;
+    padding-bottom: 0;
+}

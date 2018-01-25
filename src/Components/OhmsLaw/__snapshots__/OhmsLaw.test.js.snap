@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OhmsLawComponent snapshot matches 1`] = `
+<div
+  className="equationBox"
+>
+  <h3>
+    Ohms Law
+  </h3>
+  <div
+    className="equationBoxInner"
+  >
+    <p>
+      Supply at least two of the values to calculate the third.
+    </p>
+    <div
+      className="tableContainer"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <table
+          className="table"
+        >
+          <tbody>
+            <tr>
+              <td
+                align="left"
+              >
+                <label
+                  htmlFor="omhslaw-I"
+                >
+                  I (Current)
+                </label>
+              </td>
+              <td>
+                <input
+                  autoComplete="off"
+                  disabled={false}
+                  id="omhslaw-I"
+                  onChange={[Function]}
+                  tabIndex="1"
+                  value=""
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                <label
+                  htmlFor="omhslaw-V"
+                >
+                  V (Volts)
+                </label>
+              </td>
+              <td>
+                <input
+                  autoComplete="off"
+                  disabled={false}
+                  id="omhslaw-V"
+                  onChange={[Function]}
+                  tabIndex="2"
+                  value=""
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                <label
+                  htmlFor="omhslaw-R"
+                >
+                  R (Resistance)
+                </label>
+              </td>
+              <td>
+                <input
+                  autoComplete="off"
+                  disabled={false}
+                  id="omhslaw-R"
+                  onChange={[Function]}
+                  tabIndex="3"
+                  value=""
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                <label
+                  htmlFor="omhslaw-W"
+                >
+                  P (Watts)
+                </label>
+              </td>
+              <td>
+                <input
+                  autoComplete="off"
+                  disabled={false}
+                  id="omhslaw-W"
+                  onChange={[Function]}
+                  tabIndex="4"
+                  value=""
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                <button
+                  onClick={[Function]}
+                  tabIndex="6"
+                  type="button"
+                >
+                  Clear
+                </button>
+              </td>
+              <td
+                align="right"
+              >
+                <button
+                  tabIndex="5"
+                  type="submit"
+                >
+                  Calculate
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+  <img
+    alt="Omh's Law formula Wheel"
+    className="Omh's Law Formula Wheel"
+    src="/FormulaWheelElectronics.gif"
+  />
+</div>
+`;

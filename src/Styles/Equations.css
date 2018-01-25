@@ -1,0 +1,33 @@
+.tableContainer {
+    text-align: center;
+}
+.tableContainer .table {
+    margin: 0 auto;
+}
+
+.equationBox {
+    border: 1px solid lightgrey;
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.equationBox h3 {
+    margin: 0;
+    padding: 5px 0;
+    background-color: lightgrey;
+}
+
+.equationBox .equationBoxInner {
+    padding: 0 10px 10px 10px;
+    margin-bottom: 20px;
+}
+
+.equationBox .equationsList {
+    line-height: 1.5em;
+    vertical-align: text-top;
+}
+.equationBox .equationsList sup {
+    line-height: normal;
+}

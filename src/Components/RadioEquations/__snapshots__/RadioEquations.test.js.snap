@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RadioEquationsComponent snapshot matches 1`] = `
+<div
+  className="equationBox"
+>
+  <h3>
+    Wavelength
+  </h3>
+  <div
+    className="equationBoxInner"
+  >
+    <p>
+      Supply a frequency to calculate the wavelength.
+    </p>
+    <div
+      className="tableContainer"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <table
+          className="table"
+          width="100%"
+        >
+          <tbody>
+            <tr>
+              <td
+                align="left"
+              >
+                <label
+                  htmlFor="frequency"
+                >
+                  Frequency in MHz
+                </label>
+              </td>
+              <td>
+                <input
+                  autoComplete="off"
+                  id="frequency"
+                  onChange={[Function]}
+                  value="146"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                colSpan="2"
+              >
+                <table
+                  width="100%"
+                >
+                  <tbody>
+                    <tr>
+                      <td />
+                      <td>
+                        Meters
+                      </td>
+                      <td>
+                        Feet
+                      </td>
+                      <td>
+                        Inches
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        Full Wavelength
+                      </td>
+                      <td>
+                        2.055
+                      </td>
+                      <td>
+                        6.741
+                      </td>
+                      <td>
+                        80.90
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        3/4 Wavelength
+                      </td>
+                      <td>
+                        1.541
+                      </td>
+                      <td>
+                        5.056
+                      </td>
+                      <td>
+                        60.67
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        5/8 Wavelength
+                      </td>
+                      <td>
+                        1.284
+                      </td>
+                      <td>
+                        4.213
+                      </td>
+                      <td>
+                        50.56
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        1/2 Wavelength
+                      </td>
+                      <td>
+                        1.027
+                      </td>
+                      <td>
+                        3.371
+                      </td>
+                      <td>
+                        40.45
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        1/4 Wavelength
+                      </td>
+                      <td>
+                        0.5137
+                      </td>
+                      <td>
+                        1.685
+                      </td>
+                      <td>
+                        20.22
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                <button
+                  onClick={[Function]}
+                  type="button"
+                >
+                  Clear
+                </button>
+              </td>
+              <td
+                align="right"
+              >
+                <button
+                  type="submit"
+                >
+                  Calculate
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+`;
