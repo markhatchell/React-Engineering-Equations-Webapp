@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseEquation from '../BaseEquation';
-import { TankCircuit } from 'js-electrical-engineering-equations';
 import '../../Styles/Equations.css';
+const TankCircuit = require('js-electrical-engineering-equations').TankCircuit;
 
 class TankCircuitComponent extends BaseEquation {
 

@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BatteryRuntimeComponent snapshot matches 1`] = `
+<div
+  className="equationBox"
+>
+  <h3>
+    Battery Runtime
+  </h3>
+  <div
+    className="equationBoxInner"
+  >
+    <p>
+      Calculate the runtime on a battery. This equation does not take into account the diminished runtime effect of high current applications.
+    </p>
+    <p>
+      The efficiency of the system is set to 80% by default.
+    </p>
+    <div
+      className="tableContainer"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <table
+          className="table"
+          width="100%"
+        >
+          <tbody>
+            <tr>
+              <td
+                align="left"
+              >
+                <label
+                  htmlFor="batteryCapacityInAmpHours"
+                >
+                  Battery capacity in amp hours
+                </label>
+              </td>
+              <td>
+                <input
+                  autoComplete="off"
+                  id="batteryCapacityInAmpHours"
+                  onChange={[Function]}
+                  value={1}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                <label
+                  htmlFor="currentDrawInAmps"
+                >
+                  Current draw in amps
+                </label>
+              </td>
+              <td>
+                <input
+                  autoComplete="off"
+                  id="currentDrawInAmps"
+                  onChange={[Function]}
+                  value={1}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                <label
+                  htmlFor="efficiency"
+                >
+                  Efficiency of system
+                </label>
+              </td>
+              <td>
+                <input
+                  autoComplete="off"
+                  id="efficiency"
+                  onChange={[Function]}
+                  value={0.8}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                Battery capacity in amp hours
+              </td>
+              <td
+                align="left"
+              >
+                1
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                Battery capacity in coulombs
+              </td>
+              <td
+                align="left"
+              >
+                3600
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                Battery run time in min
+              </td>
+              <td
+                align="left"
+              >
+                48
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                Battery run time in hours
+              </td>
+              <td
+                align="left"
+              >
+                0.8
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                Battery run time in days
+              </td>
+              <td
+                align="left"
+              >
+                0.0333
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              />
+              <td
+                align="right"
+              >
+                <button
+                  type="submit"
+                >
+                  Calculate
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+`;

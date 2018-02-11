@@ -12,6 +12,7 @@ class Menu extends React.Component {
         <NavLink to="/ohms-law">Ohms Law</NavLink>
         <NavLink to="/wavelength">Wavelength</NavLink>
         <NavLink to="/tank-circuit">Tank Circuit</NavLink>
+        <NavLink to="/battery-runtime">Battery Runtime</NavLink>
       </div>
     );
   }

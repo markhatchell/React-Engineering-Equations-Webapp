@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router-dom'
 import OhmsLawComponent from "../OhmsLaw/OhmsLaw";
 import WavelengthComponent from "../WavelengthComponent/WavelengthComponent";
 import TankCircuitComponent from "../TankCircuitComponent/TankCircuitComponent";
+import BatteryRuntimeComponent from "../Battery/BatteryRuntimeComponent";
 
 
 
@@ -23,6 +24,7 @@ class App extends Component {
           <Route path="/ohms-law" component={OhmsLawComponent}/>
           <Route path="/wavelength" component={WavelengthComponent}/>
           <Route path="/tank-circuit" component={TankCircuitComponent}/>
+          <Route path="/battery-runtime" component={BatteryRuntimeComponent}/>
         </Switch>
       </div>
     );

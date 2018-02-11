@@ -1,7 +1,7 @@
 import React from 'react';
-import BaseEquation from "../BaseEquation";
-import { Wavelength } from 'js-electrical-engineering-equations';
+import BaseEquation from '../BaseEquation';
 import '../../Styles/Equations.css';
+const Wavelength = require('js-electrical-engineering-equations').Wavelength;
 
 class WavelengthComponent extends BaseEquation {
 

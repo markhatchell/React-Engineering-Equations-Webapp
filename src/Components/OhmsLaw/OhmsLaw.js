@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseEquation from '../BaseEquation';
-import { OhmsLaw } from 'js-electrical-engineering-equations'
 import '../../Styles/Equations.css';
+const OhmsLaw = require('js-electrical-engineering-equations').OhmsLaw;
 
 class OhmsLawComponent extends BaseEquation {
 
@@ -96,7 +96,7 @@ class OhmsLawComponent extends BaseEquation {
         Object.assign(
           {},
           this.state,
-          OhmsLaw.calcWattsResistance(current, voltage),
+          OhmsLaw.calcWattsResistance(parseFloat(current), parseFloat(voltage)),
           {
             lastCalculated: ['watts', 'resistance']
           }
@@ -107,7 +107,7 @@ class OhmsLawComponent extends BaseEquation {
         Object.assign(
           {},
           this.state,
-          OhmsLaw.calcWattsCurrent(resistance, voltage),
+          OhmsLaw.calcWattsCurrent(parseFloat(resistance), parseFloat(voltage)),
           {
             lastCalculated: ['watts', 'current']
           }
@@ -118,7 +118,7 @@ class OhmsLawComponent extends BaseEquation {
         Object.assign(
           {},
           this.state,
-          OhmsLaw.calcWattsVoltage(resistance, current),
+          OhmsLaw.calcWattsVoltage(parseFloat(resistance), parseFloat(current)),
           {
             lastCalculated: ['watts', 'voltage']
           }
@@ -129,7 +129,7 @@ class OhmsLawComponent extends BaseEquation {
         Object.assign(
           {},
           this.state,
-          OhmsLaw.calcVoltageCurrent(resistance, watts),
+          OhmsLaw.calcVoltageCurrent(parseFloat(resistance), parseFloat(watts)),
           {
             lastCalculated: ['voltage', 'current']
           }
@@ -140,7 +140,7 @@ class OhmsLawComponent extends BaseEquation {
         Object.assign(
           {},
           this.state,
-          OhmsLaw.calcVoltageResistance(current, watts),
+          OhmsLaw.calcVoltageResistance(parseFloat(current), parseFloat(watts)),
           {
             lastCalculated: ['voltage', 'resistance']
           }
@@ -151,7 +151,7 @@ class OhmsLawComponent extends BaseEquation {
         Object.assign(
           {},
           this.state,
-          OhmsLaw.calcCurrentResistance(watts, voltage),
+          OhmsLaw.calcCurrentResistance(parseFloat(watts), parseFloat(voltage)),
           {
             lastCalculated: ['current', 'resistance']
           }
