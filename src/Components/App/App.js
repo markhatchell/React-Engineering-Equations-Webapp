@@ -36,6 +36,7 @@ class App extends Component {
   }
 
   handleChangeTitle(newTitle) {
+    document.title = newTitle;
     this.setState(Object.assign(
       this.state,
       {
