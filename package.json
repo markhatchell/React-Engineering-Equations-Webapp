@@ -5,7 +5,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "js-electrical-engineering-equations": "^1.3.2",
+    "js-electrical-engineering-equations": "^2.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",

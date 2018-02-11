@@ -17,8 +17,8 @@ describe('WavelengthComponent', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  const component = shallow(<WavelengthComponent />);
-  const instance = component.instance();
+  let component = shallow(<WavelengthComponent />);
+  let instance = component.instance();
 
 
   test('frequency should be 300', () => {
@@ -26,10 +26,10 @@ describe('WavelengthComponent', () => {
       {},
       component.state(),
       {
-        frequency: "300"
+        frequency: 300
       }
     ));
-    expect(component.state("frequency")).toBe("300");
+    expect(component.state("frequency")).toBe(300);
   });
 
   test('wavelength should be 1', () => {
@@ -37,11 +37,11 @@ describe('WavelengthComponent', () => {
       {},
       component.state(),
       {
-        frequency: "300"
+        frequency: 300
       }
     ));
     instance.calculate();
-    expect(component.state("wavelength").toString()).toBe("1.000");
+    expect(component.state("wavelength").toFloat()).toEqual(1);
   });
 
 });

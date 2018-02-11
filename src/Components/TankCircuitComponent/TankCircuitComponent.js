@@ -3,16 +3,13 @@ import BaseEquation from '../BaseEquation';
 import { TankCircuit } from 'js-electrical-engineering-equations';
 import '../../Styles/Equations.css';
 
-// equations https://www.allaboutcircuits.com/textbook/alternating-current/chpt-6/parallel-tank-circuit-resonance/
-
-
 class TankCircuitComponent extends BaseEquation {
 
   constructor(props) {
     super(props);
     this.state = {
       frequencyInHertz: '',
-      inductanceInNanoHenries: '',
+      inductanceInNanoHenrys: '',
       capacitanceInPicoFarads: '',
       lastCalculated: []
     }
@@ -44,10 +41,10 @@ class TankCircuitComponent extends BaseEquation {
                     <label htmlFor="tankcircuit-L">L (Inductance in nH)</label>
                   </td>
                   <td>
-                    <input id="tankcircuit-L" value={this.state.inductanceInNanoHenries} disabled={this.wasLastCalculated('inductanceInNanoHenries')}
+                    <input id="tankcircuit-L" value={this.state.inductanceInNanoHenrys} disabled={this.wasLastCalculated('inductanceInNanoHenrys')}
                            autoComplete="off"
                            tabIndex="2"
-                           onChange={(e) => this.collectFloatValueFor('inductanceInNanoHenries', e)}/>
+                           onChange={(e) => this.collectFloatValueFor('inductanceInNanoHenrys', e)}/>
                   </td>
                 </tr>
                 <tr>
@@ -79,13 +76,13 @@ class TankCircuitComponent extends BaseEquation {
   }
 
   calculateOtherValues() {
-    const { frequencyInHertz, inductanceInNanoHenries ,capacitanceInPicoFarads } = this.state;
-    const inductance  = parseFloat(this.state.inductanceInNanoHenries) / 1000000000;
+    const { frequencyInHertz, inductanceInNanoHenrys ,capacitanceInPicoFarads } = this.state;
+    const inductance  = parseFloat(this.state.inductanceInNanoHenrys) / 1000000000;
     const capacitance = parseFloat(this.state.capacitanceInPicoFarads) / 1000000000000;
 
 
-    if (this.wasLastCalculated('frequencyInHertz') || (inductanceInNanoHenries && capacitanceInPicoFarads && frequencyInHertz === '')) {
-      const { calculatedFrequencyInHertz } = TankCircuit.calcFrequency(inductance, capacitance);
+    if (this.wasLastCalculated('frequencyInHertz') || (inductanceInNanoHenrys && capacitanceInPicoFarads && frequencyInHertz === '')) {
+      const calculatedFrequencyInHertz = TankCircuit.calcFrequency(inductance, capacitance);
       this.setState(
         Object.assign(
           {},
@@ -96,9 +93,9 @@ class TankCircuitComponent extends BaseEquation {
           }
         )
       );
-    } else if (this.wasLastCalculated('capacitanceInPicoFarads') || (frequencyInHertz && inductanceInNanoHenries && capacitanceInPicoFarads === '')) {
+    } else if (this.wasLastCalculated('capacitanceInPicoFarads') || (frequencyInHertz && inductanceInNanoHenrys && capacitanceInPicoFarads === '')) {
       const frequencyAsFloat = parseFloat(frequencyInHertz.replace(/,/g,''));
-      const { calculatedCapacitanceInFarads } = TankCircuit.calcCapacitance(frequencyAsFloat, inductance);
+      const calculatedCapacitanceInFarads = TankCircuit.calcCapacitance(frequencyAsFloat, inductance);
 
       this.setState(
         Object.assign(
@@ -110,17 +107,17 @@ class TankCircuitComponent extends BaseEquation {
           }
         )
       );
-    } else if (this.wasLastCalculated('inductanceInNanoHenries') || (frequencyInHertz && capacitanceInPicoFarads && inductanceInNanoHenries === '')) {
+    } else if (this.wasLastCalculated('inductanceInNanoHenrys') || (frequencyInHertz && capacitanceInPicoFarads && inductanceInNanoHenrys === '')) {
       const frequencyAsFloat = parseFloat(frequencyInHertz.replace(/,/g,''));
-      const { calculatedInductanceInHenries } = TankCircuit.calcInductance(frequencyAsFloat, capacitance);
+      const calculatedInductanceInHenrys = TankCircuit.calcInductance(frequencyAsFloat, capacitance);
 
       this.setState(
         Object.assign(
           {},
           this.state,
           {
-            inductanceInNanoHenries: calculatedInductanceInHenries * 1000000000,
-            lastCalculated: ['inductanceInNanoHenries']
+            inductanceInNanoHenrys: calculatedInductanceInHenrys * 1000000000,
+            lastCalculated: ['inductanceInNanoHenrys']
           }
         )
       );
@@ -129,7 +126,7 @@ class TankCircuitComponent extends BaseEquation {
   }
 
   countValues() {
-    const values = [this.state.frequencyInHertz, this.state.inductanceInNanoHenries, this.state.capacitanceInPicoFarads];
+    const values = [this.state.frequencyInHertz, this.state.inductanceInNanoHenrys, this.state.capacitanceInPicoFarads];
     let valuesCount = 0;
     for (let i = 0; i < values.length; i++) {
       if (values[i] !== '') {
@@ -157,7 +154,7 @@ class TankCircuitComponent extends BaseEquation {
         this.state,
         {
           frequencyInHertz: '',
-          inductanceInNanoHenries: '',
+          inductanceInNanoHenrys: '',
           capacitanceInPicoFarads: '',
           lastCalculated: ''
         }
