@@ -3,6 +3,7 @@ machine:
     version: 6.11.5
 test:
   override:
+    - npm run build-css
     - npm test -- --coverage
   post:
     - npm install -g codeclimate-test-reporter
