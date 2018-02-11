@@ -1,47 +1,38 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import WavelengthComponent from "./WavelengthComponent";
 import {shallow, configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import BatteryRuntimeComponent from "./BatteryRuntimeComponent";
 
 configure({ adapter: new Adapter() });
 
 const dom = renderer.create(
-  <WavelengthComponent />,
+  <BatteryRuntimeComponent />,
 );
 
-describe('WavelengthComponent', () => {
+describe('BatteryRuntimeComponent', () => {
 
   test('snapshot matches', () => {
     let tree = dom.toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  let component = shallow(<WavelengthComponent />);
+  let component = shallow(<BatteryRuntimeComponent />);
   let instance = component.instance();
 
-
-  test('frequency should be 300', () => {
-    component.setState(Object.assign(
-      {},
-      component.state(),
-      {
-        frequency: 300
-      }
-    ));
-    expect(component.state("frequency")).toBe(300);
-  });
 
   test('wavelength should be 1', () => {
     component.setState(Object.assign(
       {},
       component.state(),
       {
-        frequency: 300
+        batteryCapacityInAmpHours: 1,
+        currentDrawInAmps: 1,
+        efficiency: .8
       }
     ));
     instance.calculate();
-    expect(component.state("wavelength").toFloat()).toEqual(1);
+    expect(component.state("battery").getRunTimeInMin()).toEqual(48);
   });
 
 });

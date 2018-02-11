@@ -1,14 +1,14 @@
 import React from 'react';
-import BaseEquation from "../BaseEquation";
-import { Wavelength } from 'js-electrical-engineering-equations';
+import BaseEquation from '../BaseEquation';
 import '../../Styles/Equations.css';
+const Wavelength = require('js-electrical-engineering-equations').Wavelength;
 
 class WavelengthComponent extends BaseEquation {
 
   constructor(props) {
     super(props);
     this.state = {
-      frequency: '146',
+      frequency: 146,
       wavelength: new Wavelength(146),
       threeQuartersWavelength: '',
       fiveEighthsWavelength: '',
@@ -107,7 +107,7 @@ class WavelengthComponent extends BaseEquation {
       {},
       this.state,
       {
-        wavelength: new Wavelength(this.state.frequency)
+        wavelength: new Wavelength(parseFloat(this.state.frequency))
       }
     ));
 
@@ -126,7 +126,7 @@ class WavelengthComponent extends BaseEquation {
         {},
         this.state,
         {
-          frequency: ''
+          frequency: 0
         }
       )
     );

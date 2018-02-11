@@ -1,11 +1,11 @@
 {
   "name": "react-engineering-equations-webapp",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Mark Hatchell",
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "js-electrical-engineering-equations": "^1.3.2",
+    "js-electrical-engineering-equations": "^2.0.5",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-router-dom": "^4.2.2",
@@ -18,6 +18,7 @@
     "serve": "serve -s build",
     "eject": "react-scripts eject"
   },
+  "homepage": "https://react-engineering-equations.herokuapp.com/",
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
