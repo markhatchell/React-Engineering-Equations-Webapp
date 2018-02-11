@@ -7,6 +7,10 @@ class WavelengthComponent extends BaseEquation {
 
   constructor(props) {
     super(props);
+    if (props.hasOwnProperty('onChangeTitle')) {
+      props.onChangeTitle('Wavelength');
+    }
+
     this.state = {
       frequency: 146,
       wavelength: new Wavelength(146),

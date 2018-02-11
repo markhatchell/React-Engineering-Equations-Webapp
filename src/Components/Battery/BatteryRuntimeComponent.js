@@ -7,6 +7,9 @@ const getFloat = require('js-electrical-engineering-equations').getFloat;
 class BatteryRuntimeComponent extends BaseEquation {
 
   constructor(props) {
+    if (props.hasOwnProperty('onChangeTitle')) {
+      props.onChangeTitle('Battery Runtime');
+    }
     super(props);
     this.state = {
       batteryCapacityInAmpHours: 1,

@@ -1,35 +1,65 @@
+
+@import '../../scss/mixins.scss';
+
 .mainMenu {
-    position: relative;
-    display: block;
-    margin:0;
-    padding: 0;
-    border-bottom: 2px solid lightgrey;
+  position: relative;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border-bottom: 2px solid lightgrey;
 }
 
 .mainMenu a:first-child {
-    border-left: 2px solid lightgrey;
-}
-.mainMenu a {
-    text-decoration: none;
-    color: cornflowerblue;
-}
-.mainMenu a:visited {
-    color: cornflowerblue;
-}
-.mainMenu a:hover {
-    color: #63c4ff;
-}
-.mainMenu a:active {
-    color: #485c9b;
+  border-left: 2px solid lightgrey;
 }
 
 .mainMenu a {
-    position: relative;
-    padding: 5px 10px;
-    display: inline-block;
-    border-right: 2px solid lightgrey;
+  text-decoration: none;
+  color: cornflowerblue;
 }
+
+.mainMenu a:visited {
+  color: cornflowerblue;
+}
+
+.mainMenu a:hover {
+  color: #63c4ff;
+}
+
+.mainMenu a:active {
+  color: #485c9b;
+}
+
+.mainMenu a {
+  position: relative;
+  padding: 5px 10px;
+  display: inline-block;
+  border-right: 2px solid lightgrey;
+}
+
 .mainMenu a.active {
-    border-bottom: 5px solid lightgrey;
-    padding-bottom: 0;
+  border-bottom: 5px solid lightgrey;
+  padding-bottom: 0;
+}
+
+@media only screen and (max-width:667px) {
+  .mainMenu {
+    height: 0;
+    overflow: hidden;
+  }
+  .mainMenu[data-open=true] {
+    height: auto;
+  }
+  .mainMenu a {
+    display: block;
+    border: none;
+  }
+  .mainMenu a:first-child {
+    border-left: none;
+  }
+  .mainMenu a.active {
+    border: none;
+    background-color: #d7d7d7;
+    padding-bottom: 5px;
+  }
 }

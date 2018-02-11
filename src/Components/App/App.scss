@@ -1,3 +1,5 @@
+@import '../../scss/mixins.scss';
+
 .App {
   text-align: center;
 }
@@ -11,6 +13,7 @@
   background-color: #222;
   padding: 10px;
   color: white;
+  @include prefix(user-select, none);
 }
 
 .App-title {
@@ -50,4 +53,11 @@ button.square {
   flex-direction: row;
   justify-content: center;
   padding:0;
+}
+
+
+@media only screen and (max-width:667px) {
+  .App-header {
+    cursor: pointer;
+  }
 }

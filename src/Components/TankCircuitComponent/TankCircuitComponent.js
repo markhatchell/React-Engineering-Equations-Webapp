@@ -7,6 +7,9 @@ class TankCircuitComponent extends BaseEquation {
 
   constructor(props) {
     super(props);
+    if (props.hasOwnProperty('onChangeTitle')) {
+      props.onChangeTitle('Tank Circuit');
+    }
     this.state = {
       frequencyInHertz: '',
       inductanceInNanoHenrys: '',

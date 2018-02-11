@@ -7,6 +7,9 @@ class OhmsLawComponent extends BaseEquation {
 
   constructor(props) {
     super(props);
+    if (props.hasOwnProperty('onChangeTitle')) {
+      props.onChangeTitle('Ohms Law');
+    }
     this.state = {
       current: '',
       voltage: '',
