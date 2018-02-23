@@ -11,5 +11,5 @@ test:
 deployment:
   staging:
     branch: master
-    heroku:
-      appname: react-engineering-equations
+    commands:
+    - rsync -v -r -e "ssh" ./build/ node@api.1337n073.com:~/react-engineering-equations/
