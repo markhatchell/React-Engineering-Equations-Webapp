@@ -12,4 +12,5 @@ deployment:
   staging:
     branch: master
     commands:
-    - rsync -v -r -e "ssh" /home/ubuntu/React-Engineering-Equations-Webapp/build/ node@api.1337n073.com:~/react-engineering-equations/
+    - ls -al /home/ubuntu/React-Engineering-Equations-Webapp/
+    - rsync -v -r -e "ssh" /home/ubuntu/React-Engineering-Equations-Webapp/React-Engineering-Equations-Webapp/build/ node@api.1337n073.com:~/react-engineering-equations/
