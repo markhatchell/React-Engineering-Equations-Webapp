@@ -24,7 +24,7 @@
     "serve": "serve -s build",
     "eject": "react-scripts eject"
   },
-  "homepage": "https://react-engineering-equations.herokuapp.com/",
+  "homepage": "https://react-engineering-equations.1337n073.com/",
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
