@@ -6,4 +6,4 @@ This is a react web app that contains engineering equations.
 
 To view the current build in action you can visit:
 
-https://react-engineering-equations.herokuapp.com
+https://react-engineering-equations.1337n073.com
