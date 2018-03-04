@@ -22,6 +22,7 @@ class Menu extends React.Component {
         <NavLink to="/wavelength">Wavelength</NavLink>
         <NavLink to="/tank-circuit">Tank Circuit</NavLink>
         <NavLink to="/battery-runtime">Battery Runtime</NavLink>
+        <NavLink to="/resistor-divider">Resistor Divider</NavLink>
       </div>
     );
   }

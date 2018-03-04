@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResistorDividerComponent snapshot matches 1`] = `
+<div
+  className="equationBox"
+>
+  <h3>
+    Resistor Divider
+  </h3>
+  <div
+    className="equationBoxInner"
+  >
+    <p>
+      Supply at least three of the values to calculate the fourth.
+    </p>
+    <p>
+      The base equation for a resistor divider network is 
+      <br />
+       Vo = (Vs * R2) / (R1 + R2)
+    </p>
+    <div
+      className="tableContainer"
+    >
+      <form
+        onSubmit={[Function]}
+      >
+        <table
+          className="table"
+        >
+          <tbody>
+            <tr>
+              <td
+                align="left"
+              >
+                <label
+                  htmlFor="omhslaw-I"
+                >
+                  Input Voltage
+                </label>
+              </td>
+              <td>
+                <input
+                  autoComplete="off"
+                  disabled={false}
+                  id="inputVoltage"
+                  onChange={[Function]}
+                  tabIndex="1"
+                  value=""
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                <label
+                  htmlFor="omhslaw-V"
+                >
+                  Resistor 1 (Ohms)
+                </label>
+              </td>
+              <td>
+                <input
+                  autoComplete="off"
+                  disabled={false}
+                  id="resistor1"
+                  onChange={[Function]}
+                  tabIndex="2"
+                  value=""
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                <label
+                  htmlFor="omhslaw-R"
+                >
+                  Resistor 2 (Ohms)
+                </label>
+              </td>
+              <td>
+                <input
+                  autoComplete="off"
+                  disabled={false}
+                  id="resistor2"
+                  onChange={[Function]}
+                  tabIndex="3"
+                  value=""
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                <label
+                  htmlFor="omhslaw-W"
+                >
+                  Output Voltage
+                </label>
+              </td>
+              <td>
+                <input
+                  autoComplete="off"
+                  disabled={false}
+                  id="outputVoltage"
+                  onChange={[Function]}
+                  tabIndex="4"
+                  value=""
+                />
+              </td>
+            </tr>
+            <tr>
+              <td
+                align="left"
+              >
+                <button
+                  onClick={[Function]}
+                  tabIndex="6"
+                  type="button"
+                >
+                  Clear
+                </button>
+              </td>
+              <td
+                align="right"
+              >
+                <button
+                  tabIndex="5"
+                  type="submit"
+                >
+                  Calculate
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+  </div>
+</div>
+`;

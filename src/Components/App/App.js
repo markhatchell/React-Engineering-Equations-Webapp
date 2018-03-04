@@ -6,6 +6,7 @@ import OhmsLawComponent from "../OhmsLaw/OhmsLaw";
 import WavelengthComponent from "../WavelengthComponent/WavelengthComponent";
 import TankCircuitComponent from "../TankCircuitComponent/TankCircuitComponent";
 import BatteryRuntimeComponent from "../Battery/BatteryRuntimeComponent";
+import ResistorDividerComponent from "../ResistorDividerComponent/ResistorDividerComponent";
 
 
 class App extends Component {
@@ -30,6 +31,7 @@ class App extends Component {
           <Route path="/wavelength" render={(props)=><WavelengthComponent onChangeTitle={(title) => {this.handleChangeTitle(title)}} {...props}/> } />
           <Route path="/tank-circuit" render={(props)=><TankCircuitComponent onChangeTitle={(title) => {this.handleChangeTitle(title)}} {...props} /> } />
           <Route path="/battery-runtime" render={(props)=><BatteryRuntimeComponent onChangeTitle={(title) => {this.handleChangeTitle(title)}} {...props} />} />
+          <Route path="/resistor-divider" render={(props)=><ResistorDividerComponent onChangeTitle={(title) => {this.handleChangeTitle(title)}} {...props} />} />
         </Switch>
       </div>
     );
