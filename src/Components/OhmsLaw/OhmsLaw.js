@@ -1,6 +1,10 @@
 import React from 'react';
 import BaseEquation from '../BaseEquation';
 import '../../Styles/Equations.css';
+import Card, { CardContent, CardHeader, CardActions } from 'material-ui/Card';
+import TextField from 'material-ui/TextField';
+import Button from 'material-ui/Button';
+
 const OhmsLaw = require('js-electrical-engineering-equations').OhmsLaw;
 
 class OhmsLawComponent extends BaseEquation {
@@ -16,78 +20,81 @@ class OhmsLawComponent extends BaseEquation {
       resistance: '',
       watts: '',
       lastCalculated: []
-    }
+    };
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.wasLastCalculated = this.wasLastCalculated.bind(this);
   }
 
   render() {
+    const { wasLastCalculated, handleSubmit } = this;
     return (
-      <div className="equationBox">
-        <h3>Ohms Law</h3>
-        <div className="equationBoxInner">
-          <p>Supply at least two of the values to calculate the others.</p>
-          <div className="tableContainer">
-            <form onSubmit={(e) => this.handleSubmit(e)}>
-              <table className="table">
-                <tbody>
-                <tr>
-                  <td align="left">
-                    <label htmlFor="omhslaw-I">I (Current)</label>
-                  </td>
-                  <td>
-                    <input id="omhslaw-I" value={this.state.current} disabled={this.wasLastCalculated('current')}
-                           autoComplete="off"
-                           tabIndex="1"
-                           onChange={(e) => this.collectFloatValueFor('current', e)}/>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left">
-                    <label htmlFor="omhslaw-V">V (Volts)</label>
-                  </td>
-                  <td>
-                    <input id="omhslaw-V" value={this.state.voltage} disabled={this.wasLastCalculated('voltage')}
-                           autoComplete="off"
-                           tabIndex="2"
-                           onChange={(e) => this.collectFloatValueFor('voltage', e)}/>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left">
-                    <label htmlFor="omhslaw-R">R (Resistance)</label>
-                  </td>
-                  <td>
-                    <input id="omhslaw-R" value={this.state.resistance} disabled={this.wasLastCalculated('resistance')}
-                           autoComplete="off"
-                           tabIndex="3"
-                           onChange={(e) => this.collectFloatValueFor('resistance', e)}/>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left">
-                    <label htmlFor="omhslaw-W">P (Watts)</label>
-                  </td>
-                  <td>
-                    <input id="omhslaw-W" value={this.state.watts} disabled={this.wasLastCalculated('watts')}
-                           autoComplete="off"
-                           tabIndex="4"
-                           onChange={(e) => this.collectFloatValueFor('watts', e)}/>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left">
-                    <button type="button" tabIndex="6" onClick={() => this.handleClear()}>Clear</button>
-                  </td>
-                  <td align="right">
-                    <button type="submit" tabIndex="5">Calculate</button>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </form>
-          </div>
-        </div>
-        <img src="/FormulaWheelElectronics.gif" className="Omh's Law Formula Wheel" alt="Omh's Law formula Wheel"/>
-      </div>
+      <Card className="equationBox">
+        <form onSubmit={handleSubmit}>
+          <CardHeader title="Ohms Law" />
+          <CardContent className="equationBoxInner">
+            <p>Supply at least two of the values to calculate the others.</p>
+              <TextField
+                id="full-width"
+                label="I (Current)"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                disabled={wasLastCalculated('current')}
+                fullWidth
+                name="current"
+                margin="normal"
+                onChange={(e) => this.collectFloatValueFor('current', e)}
+                value={this.state.current}
+              />
+              <TextField
+                id="full-width"
+                label="V (Volts)"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                disabled={wasLastCalculated('voltage')}
+                fullWidth
+                name="voltage"
+                margin="normal"
+                onChange={(e) => this.collectFloatValueFor('voltage', e)}
+                value={this.state.voltage}
+              />
+              <TextField
+                id="full-width"
+                label="R (Resistance)"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                disabled={wasLastCalculated('resistance')}
+                fullWidth
+                name="resistance"
+                margin="normal"
+                onChange={(e) => this.collectFloatValueFor('resistance', e)}
+                value={this.state.resistance}
+              />
+              <TextField
+                id="full-width"
+                label="P (Watts)"
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                disabled={wasLastCalculated('watts')}
+                fullWidth
+                name="watts"
+                margin="normal"
+                onChange={(e) => this.collectFloatValueFor('watts', e)}
+                value={this.state.watts}
+              />
+          </CardContent>
+          <CardActions>
+            <Button type="button" tabIndex="6" onClick={() => this.handleClear()}>Clear</Button>
+            <Button type="submit" tabIndex="5" color="primary" variant="raised" style={{marginLeft: 'auto'}}>Calculate</Button>
+          </CardActions>
+          <p>
+            <img src="/FormulaWheelElectronics.gif" className="Omh's Law Formula Wheel" alt="Omh's Law formula Wheel"/>
+          </p>
+        </form>
+      </Card>
     );
   }
 
@@ -210,7 +217,6 @@ class OhmsLawComponent extends BaseEquation {
   wasLastCalculated(field) {
     const lastCalculated = this.state.lastCalculated;
     return lastCalculated.indexOf(field) >= 0;
-
   }
 
 }
