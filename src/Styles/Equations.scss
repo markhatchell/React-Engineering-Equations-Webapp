@@ -8,10 +8,12 @@
 .equationBox {
     border: 1px solid lightgrey;
     position: relative;
-    display: inline-block;
     padding: 0;
     margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
     max-width: 450px;
+    text-align: center;
 }
 
 .equationBox h3 {
