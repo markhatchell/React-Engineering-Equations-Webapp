@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import Menu from "../Menu/Menu";
 import { Route, Switch } from 'react-router-dom'
 import OhmsLawComponent from "../OhmsLaw/OhmsLaw";
 import WavelengthComponent from "../WavelengthComponent/WavelengthComponent";
