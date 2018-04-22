@@ -27,8 +27,8 @@ function TopBar(props) {
   } = props;
 
   return (
-    <div>
-      <AppBar position="static">
+    <div style={{ marginTop: 0 }}>
+      <AppBar position="static" style={{ position: "fixed" }}>
         <Toolbar disableGutters>
           <IconButton color="inherit" aria-label="Menu" onClick={onToggleDrawer}>
             <MenuIcon />

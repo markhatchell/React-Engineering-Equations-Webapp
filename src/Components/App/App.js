@@ -73,9 +73,11 @@ class App extends Component {
       <div className="App">
         <TopBar title={this.state.title} onToggleDrawer={toggleDrawer} />
         <SideMenu onToggleDrawer={toggleDrawer} isOpen={menuOpen} routes={Routes} />
-        <Switch>
-          <MakeRoutes onChangeTitle={handleChangeTitle} />
-        </Switch>
+        <div style={{ paddingTop: 64 }}>
+          <Switch>
+            <MakeRoutes onChangeTitle={handleChangeTitle} />
+          </Switch>
+        </div>
       </div>
     );
   }
