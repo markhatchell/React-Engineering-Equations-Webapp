@@ -1,7 +1,7 @@
 import React from 'react';
 import BaseEquation from '../BaseEquation';
 import '../../Styles/Equations.css';
-import Card, { CardContent, CardHeader, CardActions } from 'material-ui/Card';
+import Card, { CardContent, CardActions } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
 
@@ -30,7 +30,6 @@ class OhmsLawComponent extends BaseEquation {
     return (
       <Card className="equationBox">
         <form onSubmit={handleSubmit}>
-          <CardHeader title="Ohms Law" />
           <CardContent className="equationBoxInner">
             <p>Supply at least two of the values to calculate the others.</p>
               <TextField
