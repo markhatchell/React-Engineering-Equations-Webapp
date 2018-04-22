@@ -1,6 +1,10 @@
 import React from 'react';
 import BaseEquation from '../BaseEquation';
 import '../../Styles/Equations.css';
+import Card, { CardContent, CardActions } from 'material-ui/Card';
+import TextField from 'material-ui/TextField';
+import Button from 'material-ui/Button';
+
 const TankCircuit = require('js-electrical-engineering-equations').TankCircuit;
 
 class TankCircuitComponent extends BaseEquation {
@@ -15,66 +19,66 @@ class TankCircuitComponent extends BaseEquation {
       inductanceInNanoHenrys: '',
       capacitanceInPicoFarads: '',
       lastCalculated: []
-    }
+    };
+
+    this.wasLastCalculated = this.wasLastCalculated.bind(this);
   }
 
   render() {
+    const { wasLastCalculated } = this;
+
     return (
-      <div className="equationBox">
-        <h3>Tank Circuit</h3>
-        <div className="equationBoxInner">
-          <p>Supply at least two of the values to calculate the third.</p>
-          <div className="tableContainer">
-            <form onSubmit={(e) => this.handleSubmit(e)}>
-              <table className="table">
-                <tbody>
-                <tr>
-                  <td align="left">
-                    <label htmlFor="tankcircuit-F"> &#x192; (Frequency in Hertz)</label>
-                  </td>
-                  <td>
-                    <input id="tankcircuit-F" value={this.state.frequencyInHertz} disabled={this.wasLastCalculated('frequencyInHertz')}
-                           autoComplete="off"
-                           tabIndex="1"
-                           onChange={(e) => this.collectFloatValueFor('frequencyInHertz', e)}/>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left">
-                    <label htmlFor="tankcircuit-L">L (Inductance in nH)</label>
-                  </td>
-                  <td>
-                    <input id="tankcircuit-L" value={this.state.inductanceInNanoHenrys} disabled={this.wasLastCalculated('inductanceInNanoHenrys')}
-                           autoComplete="off"
-                           tabIndex="2"
-                           onChange={(e) => this.collectFloatValueFor('inductanceInNanoHenrys', e)}/>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left">
-                    <label htmlFor="tankcircuit-C">C (Capacitance in pF)</label>
-                  </td>
-                  <td>
-                    <input id="tankcircuit-C" value={this.state.capacitanceInPicoFarads} disabled={this.wasLastCalculated('capacitanceInPicoFarads')}
-                           autoComplete="off"
-                           tabIndex="3"
-                           onChange={(e) => this.collectFloatValueFor('capacitanceInPicoFarads', e)}/>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left">
-                    <button type="button" tabIndex="5" onClick={() => this.handleClear()}>Clear</button>
-                  </td>
-                  <td align="right">
-                    <button type="submit" tabIndex="4">Calculate</button>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </form>
-          </div>
-        </div>
-      </div>
+      <Card className="equationBox">
+        <form onSubmit={(e) => this.handleSubmit(e)}>
+          <CardContent className="equationBoxInner">
+            <p>Supply at least two of the values to calculate the third.</p>
+            <TextField
+              id="full-width"
+              label="&#x192; (Frequency in Hertz)"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              disabled={wasLastCalculated('frequencyInHertz')}
+              fullWidth
+              name="frequencyInHertz"
+              margin="normal"
+              onChange={(e) => this.collectFloatValueFor('frequencyInHertz', e)}
+              value={this.state.frequencyInHertz}
+            />
+            <TextField
+              id="full-width"
+              label="L (Inductance in nH)"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              disabled={wasLastCalculated('inductanceInNanoHenrys')}
+              fullWidth
+              name="inductanceInNanoHenrys"
+              margin="normal"
+              onChange={(e) => this.collectFloatValueFor('inductanceInNanoHenrys', e)}
+              value={this.state.inductanceInNanoHenrys}
+            />
+            <TextField
+              id="full-width"
+              label="C (Capacitance in pF)"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              disabled={wasLastCalculated('capacitanceInPicoFarads')}
+              fullWidth
+              name="capacitanceInPicoFarads"
+              margin="normal"
+              onChange={(e) => this.collectFloatValueFor('capacitanceInPicoFarads', e)}
+              value={this.state.capacitanceInPicoFarads}
+            />
+          </CardContent>
+          <CardActions>
+            <Button type="button" tabIndex="5" onClick={() => this.handleClear()}>Clear</Button>
+            <Button type="submit" tabIndex="4" color="primary" variant="raised"
+                    style={{marginLeft: 'auto'}}>Calculate</Button>
+          </CardActions>
+        </form>
+      </Card>
     );
   }
 
