@@ -139,113 +139,117 @@ exports[`BatteryRuntimeComponent snapshot matches 1`] = `
       <table
         className="MuiTable-root-57"
       >
-        <tr
-          className="MuiTableRow-root-58"
+        <tbody
+          className="MuiTableBody-root-58"
         >
-          <td
-            align="left"
-            aria-sort={null}
-            className="MuiTableCell-root-63"
-            scope={undefined}
+          <tr
+            className="MuiTableRow-root-59"
           >
-            Battery capacity in amp hours
-          </td>
-          <td
-            align="left"
-            aria-sort={null}
-            className="MuiTableCell-root-63"
-            scope={undefined}
+            <td
+              align="left"
+              aria-sort={null}
+              className="MuiTableCell-root-64 MuiTableCell-body-66"
+              scope={undefined}
+            >
+              Battery capacity in amp hours
+            </td>
+            <td
+              align="left"
+              aria-sort={null}
+              className="MuiTableCell-root-64 MuiTableCell-body-66"
+              scope={undefined}
+            >
+              1
+            </td>
+          </tr>
+          <tr
+            className="MuiTableRow-root-59"
           >
-            1
-          </td>
-        </tr>
-        <tr
-          className="MuiTableRow-root-58"
-        >
-          <td
-            align="left"
-            aria-sort={null}
-            className="MuiTableCell-root-63"
-            scope={undefined}
+            <td
+              align="left"
+              aria-sort={null}
+              className="MuiTableCell-root-64 MuiTableCell-body-66"
+              scope={undefined}
+            >
+              Battery capacity in coulombs
+            </td>
+            <td
+              align="left"
+              aria-sort={null}
+              className="MuiTableCell-root-64 MuiTableCell-body-66"
+              scope={undefined}
+            >
+              3600
+            </td>
+          </tr>
+          <tr
+            className="MuiTableRow-root-59"
           >
-            Battery capacity in coulombs
-          </td>
-          <td
-            align="left"
-            aria-sort={null}
-            className="MuiTableCell-root-63"
-            scope={undefined}
+            <td
+              align="left"
+              aria-sort={null}
+              className="MuiTableCell-root-64 MuiTableCell-body-66"
+              scope={undefined}
+            >
+              Battery run time in min
+            </td>
+            <td
+              align="left"
+              aria-sort={null}
+              className="MuiTableCell-root-64 MuiTableCell-body-66"
+              scope={undefined}
+            >
+              48
+            </td>
+          </tr>
+          <tr
+            className="MuiTableRow-root-59"
           >
-            3600
-          </td>
-        </tr>
-        <tr
-          className="MuiTableRow-root-58"
-        >
-          <td
-            align="left"
-            aria-sort={null}
-            className="MuiTableCell-root-63"
-            scope={undefined}
+            <td
+              align="left"
+              aria-sort={null}
+              className="MuiTableCell-root-64 MuiTableCell-body-66"
+              scope={undefined}
+            >
+              Battery run time in hours
+            </td>
+            <td
+              align="left"
+              aria-sort={null}
+              className="MuiTableCell-root-64 MuiTableCell-body-66"
+              scope={undefined}
+            >
+              0.8
+            </td>
+          </tr>
+          <tr
+            className="MuiTableRow-root-59"
           >
-            Battery run time in min
-          </td>
-          <td
-            align="left"
-            aria-sort={null}
-            className="MuiTableCell-root-63"
-            scope={undefined}
-          >
-            48
-          </td>
-        </tr>
-        <tr
-          className="MuiTableRow-root-58"
-        >
-          <td
-            align="left"
-            aria-sort={null}
-            className="MuiTableCell-root-63"
-            scope={undefined}
-          >
-            Battery run time in hours
-          </td>
-          <td
-            align="left"
-            aria-sort={null}
-            className="MuiTableCell-root-63"
-            scope={undefined}
-          >
-            0.8
-          </td>
-        </tr>
-        <tr
-          className="MuiTableRow-root-58"
-        >
-          <td
-            align="left"
-            aria-sort={null}
-            className="MuiTableCell-root-63"
-            scope={undefined}
-          >
-            Battery run time in days
-          </td>
-          <td
-            align="left"
-            aria-sort={null}
-            className="MuiTableCell-root-63"
-            scope={undefined}
-          >
-            0.0333
-          </td>
-        </tr>
+            <td
+              align="left"
+              aria-sort={null}
+              className="MuiTableCell-root-64 MuiTableCell-body-66"
+              scope={undefined}
+            >
+              Battery run time in days
+            </td>
+            <td
+              align="left"
+              aria-sort={null}
+              className="MuiTableCell-root-64 MuiTableCell-body-66"
+              scope={undefined}
+            >
+              0.0333
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
     <div
-      className="MuiCardActions-root-71"
+      className="MuiCardActions-root-72"
     >
       <button
-        className="MuiButtonBase-root-88 MuiButton-root-73 MuiButton-raised-78 MuiButton-raisedPrimary-79 MuiCardActions-action-72"
+        className="MuiButtonBase-root-89 MuiButton-root-74 MuiButton-raised-79 MuiButton-raisedPrimary-80 MuiCardActions-action-73"
         disabled={false}
         onBlur={[Function]}
         onFocus={[Function]}
@@ -266,12 +270,12 @@ exports[`BatteryRuntimeComponent snapshot matches 1`] = `
         type="submit"
       >
         <span
-          className="MuiButton-label-74"
+          className="MuiButton-label-75"
         >
           Calculate
         </span>
         <span
-          className="MuiTouchRipple-root-91"
+          className="MuiTouchRipple-root-92"
         />
       </button>
     </div>

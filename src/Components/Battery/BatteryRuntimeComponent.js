@@ -4,7 +4,7 @@ import '../../Styles/Equations.css';
 import Card, { CardContent, CardActions } from 'material-ui/Card';
 import TextField from 'material-ui/TextField';
 import Button from 'material-ui/Button';
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import Table, { TableBody, TableCell, TableRow } from 'material-ui/Table';
 
 const Battery = require('js-electrical-engineering-equations').Battery;
 const getFloat = require('js-electrical-engineering-equations').getFloat;
@@ -74,46 +74,48 @@ class BatteryRuntimeComponent extends BaseEquation {
               value={this.state.efficiency}
             />
             <Table>
-              <TableRow>
-                <TableCell align="left">
-                  Battery capacity in amp hours
-                </TableCell>
-                <TableCell align="left">
-                  {this.state.battery.getBatteryCapacityInAmpHours()}
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell align="left">
-                  Battery capacity in coulombs
-                </TableCell>
-                <TableCell align="left">
-                  {this.state.battery.getBatteryCapacityInCoulombs()}
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell align="left">
-                  Battery run time in min
-                </TableCell>
-                <TableCell align="left">
-                  {this.state.battery.getRunTimeInMin()}
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell align="left">
-                  Battery run time in hours
-                </TableCell>
-                <TableCell align="left">
-                  {this.state.battery.getRunTimeInHours()}
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell align="left">
-                  Battery run time in days
-                </TableCell>
-                <TableCell align="left">
-                  {getFloat(this.state.battery.getRunTimeInHours() / 24, 4)}
-                </TableCell>
-              </TableRow>
+              <TableBody>
+                <TableRow>
+                  <TableCell align="left">
+                    Battery capacity in amp hours
+                  </TableCell>
+                  <TableCell align="left">
+                    {this.state.battery.getBatteryCapacityInAmpHours()}
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell align="left">
+                    Battery capacity in coulombs
+                  </TableCell>
+                  <TableCell align="left">
+                    {this.state.battery.getBatteryCapacityInCoulombs()}
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell align="left">
+                    Battery run time in min
+                  </TableCell>
+                  <TableCell align="left">
+                    {this.state.battery.getRunTimeInMin()}
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell align="left">
+                    Battery run time in hours
+                  </TableCell>
+                  <TableCell align="left">
+                    {this.state.battery.getRunTimeInHours()}
+                  </TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell align="left">
+                    Battery run time in days
+                  </TableCell>
+                  <TableCell align="left">
+                    {getFloat(this.state.battery.getRunTimeInHours() / 24, 4)}
+                  </TableCell>
+                </TableRow>
+              </TableBody>
             </Table>
           </CardContent>
           <CardActions>
