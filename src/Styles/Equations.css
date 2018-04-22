@@ -1,8 +1,6 @@
-.tableContainer {
-  text-align: center; }
-
-.tableContainer .table {
-  margin: 0 auto; }
+.equationBoxInner th,
+.equationBoxInner td {
+  padding: 2px; }
 
 .equationBox {
   border: 1px solid lightgrey;
