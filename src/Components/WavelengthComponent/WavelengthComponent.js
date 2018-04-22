@@ -1,6 +1,11 @@
 import React from 'react';
 import BaseEquation from '../BaseEquation';
 import '../../Styles/Equations.css';
+import Card, { CardContent, CardActions } from 'material-ui/Card';
+import TextField from 'material-ui/TextField';
+import Button from 'material-ui/Button';
+import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+
 const Wavelength = require('js-electrical-engineering-equations').Wavelength;
 
 class WavelengthComponent extends BaseEquation {
@@ -18,7 +23,9 @@ class WavelengthComponent extends BaseEquation {
       fiveEighthsWavelength: '',
       halfWavelength: '',
       quarterWavelength: '',
-    }
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
@@ -26,83 +33,78 @@ class WavelengthComponent extends BaseEquation {
   }
 
   render() {
+    const {
+      handleSubmit,
+    } = this;
+
     return (
-      <div className="equationBox">
-        <h3>Wavelength</h3>
-        <div className="equationBoxInner">
-          <p>Supply a frequency to calculate the wavelength.</p>
-          <div className="tableContainer">
-            <form onSubmit={(e) => this.handleSubmit(e)}>
-              <table className="table" width="100%">
-                <tbody>
-                <tr>
-                  <td align="left">
-                    <label htmlFor="frequency">Frequency in MHz</label>
-                  </td>
-                  <td>
-                    <input id="frequency" value={this.state.frequency}
-                           autoComplete="off"
-                           onChange={(e) => this.collectFloatValueFor('frequency', e)}/>
-                  </td>
-                </tr>
-                <tr>
-                  <td colSpan="2">
-                    <table width="100%">
-                      <tbody>
-                      <tr>
-                        <td></td>
-                        <td>Meters</td>
-                        <td>Feet</td>
-                        <td>Inches</td>
-                      </tr>
-                      <tr>
-                        <td>Full Wavelength</td>
-                        <td>{this.state.wavelength.toString()}</td>
-                        <td>{this.state.wavelength.toFeet()}</td>
-                        <td>{this.state.wavelength.toInches()}</td>
-                      </tr>
-                      <tr>
-                        <td>3/4 Wavelength</td>
-                        <td>{this.state.wavelength.toThreeQuartersWavelength('m')}</td>
-                        <td>{this.state.wavelength.toThreeQuartersWavelength('f')}</td>
-                        <td>{this.state.wavelength.toThreeQuartersWavelength('in')}</td>
-                      </tr>
-                      <tr>
-                        <td>5/8 Wavelength</td>
-                        <td>{this.state.wavelength.toFiveEighthsWavelength('m')}</td>
-                        <td>{this.state.wavelength.toFiveEighthsWavelength('f')}</td>
-                        <td>{this.state.wavelength.toFiveEighthsWavelength('in')}</td>
-                      </tr>
-                      <tr>
-                        <td>1/2 Wavelength</td>
-                        <td>{this.state.wavelength.toHalfWavelength('m')}</td>
-                        <td>{this.state.wavelength.toHalfWavelength('f')}</td>
-                        <td>{this.state.wavelength.toHalfWavelength('in')}</td>
-                      </tr>
-                      <tr>
-                        <td>1/4 Wavelength</td>
-                        <td>{this.state.wavelength.toQuarterWavelength('m')}</td>
-                        <td>{this.state.wavelength.toQuarterWavelength('f')}</td>
-                        <td>{this.state.wavelength.toQuarterWavelength('in')}</td>
-                      </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left">
-                    <button type="button" onClick={() => this.handleClear()}>Clear</button>
-                  </td>
-                  <td align="right">
-                    <button type="submit">Calculate</button>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </form>
-          </div>
-        </div>
-      </div>
+      <Card className="equationBox">
+        <form onSubmit={(e) => handleSubmit(e)}>
+          <CardContent className="equationBoxInner">
+            <p>Supply a frequency to calculate the wavelength.</p>
+            <TextField
+              id="full-width"
+              label="Frequency in MHz"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              fullWidth
+              name="frequency"
+              margin="normal"
+              onChange={(e) => this.collectFloatValueFor('frequency', e)}
+              value={this.state.frequency}
+            />
+
+            <Table className="table" width="100%">
+              <TableHead>
+                <TableRow>
+                  <TableCell></TableCell>
+                  <TableCell>Meters</TableCell>
+                  <TableCell>Feet</TableCell>
+                  <TableCell>Inches</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell>Full Wavelength</TableCell>
+                  <TableCell>{this.state.wavelength.toString()}</TableCell>
+                  <TableCell>{this.state.wavelength.toFeet()}</TableCell>
+                  <TableCell>{this.state.wavelength.toInches()}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>3/4 Wavelength</TableCell>
+                  <TableCell>{this.state.wavelength.toThreeQuartersWavelength('m')}</TableCell>
+                  <TableCell>{this.state.wavelength.toThreeQuartersWavelength('f')}</TableCell>
+                  <TableCell>{this.state.wavelength.toThreeQuartersWavelength('in')}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>5/8 Wavelength</TableCell>
+                  <TableCell>{this.state.wavelength.toFiveEighthsWavelength('m')}</TableCell>
+                  <TableCell>{this.state.wavelength.toFiveEighthsWavelength('f')}</TableCell>
+                  <TableCell>{this.state.wavelength.toFiveEighthsWavelength('in')}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>1/2 Wavelength</TableCell>
+                  <TableCell>{this.state.wavelength.toHalfWavelength('m')}</TableCell>
+                  <TableCell>{this.state.wavelength.toHalfWavelength('f')}</TableCell>
+                  <TableCell>{this.state.wavelength.toHalfWavelength('in')}</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell>1/4 Wavelength</TableCell>
+                  <TableCell>{this.state.wavelength.toQuarterWavelength('m')}</TableCell>
+                  <TableCell>{this.state.wavelength.toQuarterWavelength('f')}</TableCell>
+                  <TableCell>{this.state.wavelength.toQuarterWavelength('in')}</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </CardContent>
+          <CardActions>
+            <Button type="button" tabIndex="3" onClick={() => this.handleClear()}>Clear</Button>
+            <Button type="submit" tabIndex="2" color="primary" variant="raised"
+                    style={{marginLeft: 'auto'}}>Calculate</Button>
+          </CardActions>
+        </form>
+      </Card>
     );
   }
 
