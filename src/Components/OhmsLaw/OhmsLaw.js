@@ -32,58 +32,58 @@ class OhmsLawComponent extends BaseEquation {
         <form onSubmit={handleSubmit}>
           <CardContent className="equationBoxInner">
             <p>Supply at least two of the values to calculate the others.</p>
-              <TextField
-                id="full-width"
-                label="I (Current)"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                disabled={wasLastCalculated('current')}
-                fullWidth
-                name="current"
-                margin="normal"
-                onChange={(e) => this.collectFloatValueFor('current', e)}
-                value={this.state.current}
-              />
-              <TextField
-                id="full-width"
-                label="V (Volts)"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                disabled={wasLastCalculated('voltage')}
-                fullWidth
-                name="voltage"
-                margin="normal"
-                onChange={(e) => this.collectFloatValueFor('voltage', e)}
-                value={this.state.voltage}
-              />
-              <TextField
-                id="full-width"
-                label="R (Resistance)"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                disabled={wasLastCalculated('resistance')}
-                fullWidth
-                name="resistance"
-                margin="normal"
-                onChange={(e) => this.collectFloatValueFor('resistance', e)}
-                value={this.state.resistance}
-              />
-              <TextField
-                id="full-width"
-                label="P (Watts)"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                disabled={wasLastCalculated('watts')}
-                fullWidth
-                name="watts"
-                margin="normal"
-                onChange={(e) => this.collectFloatValueFor('watts', e)}
-                value={this.state.watts}
-              />
+            <TextField
+              id="full-width"
+              label="I (Current)"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              disabled={wasLastCalculated('current')}
+              fullWidth
+              name="current"
+              margin="normal"
+              onChange={(e) => this.collectFloatValueFor('current', e)}
+              value={this.state.current}
+            />
+            <TextField
+              id="full-width"
+              label="V (Volts)"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              disabled={wasLastCalculated('voltage')}
+              fullWidth
+              name="voltage"
+              margin="normal"
+              onChange={(e) => this.collectFloatValueFor('voltage', e)}
+              value={this.state.voltage}
+            />
+            <TextField
+              id="full-width"
+              label="R (Resistance)"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              disabled={wasLastCalculated('resistance')}
+              fullWidth
+              name="resistance"
+              margin="normal"
+              onChange={(e) => this.collectFloatValueFor('resistance', e)}
+              value={this.state.resistance}
+            />
+            <TextField
+              id="full-width"
+              label="P (Watts)"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              disabled={wasLastCalculated('watts')}
+              fullWidth
+              name="watts"
+              margin="normal"
+              onChange={(e) => this.collectFloatValueFor('watts', e)}
+              value={this.state.watts}
+            />
           </CardContent>
           <CardActions>
             <Button type="button" tabIndex="6" onClick={() => this.handleClear()}>Clear</Button>
