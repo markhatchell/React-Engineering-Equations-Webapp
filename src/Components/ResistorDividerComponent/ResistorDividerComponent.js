@@ -1,6 +1,10 @@
 import React from 'react';
 import BaseEquation from '../BaseEquation';
 import '../../Styles/Equations.css';
+import Card, { CardContent, CardActions } from 'material-ui/Card';
+import TextField from 'material-ui/TextField';
+import Button from 'material-ui/Button';
+
 const { ResistorDivider } = require('js-electrical-engineering-equations');
 
 class ResistorDividerComponent extends BaseEquation {
@@ -16,79 +20,78 @@ class ResistorDividerComponent extends BaseEquation {
       resistor2: '',
       outputVoltage: '',
       lastCalculated: []
-    }
+    };
+    this.wasLastCalculated = this.wasLastCalculated.bind(this);
   }
 
   render() {
+    const { wasLastCalculated } = this;
 
     return (
-      <div className="equationBox">
-        <h3>Resistor Divider</h3>
-        <div className="equationBoxInner">
-          <p>Supply at least three of the values to calculate the fourth.</p>
-          <p>The base equation for a resistor divider network is <br /> Vo = (Vs * R2) / (R1 + R2)</p>
-          <div className="tableContainer">
-            <form onSubmit={(e) => this.handleSubmit(e)}>
-              <table className="table">
-                <tbody>
-                <tr>
-                  <td align="left">
-                    <label htmlFor="omhslaw-I">Input Voltage</label>
-                  </td>
-                  <td>
-                    <input id="inputVoltage" value={this.state.inputVoltage} disabled={this.wasLastCalculated('inputVoltage')}
-                           autoComplete="off"
-                           tabIndex="1"
-                           onChange={(e) => this.collectFloatValueFor('inputVoltage', e)}/>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left">
-                    <label htmlFor="omhslaw-V">Resistor 1 (Ohms)</label>
-                  </td>
-                  <td>
-                    <input id="resistor1" value={this.state.resistor1} disabled={this.wasLastCalculated('resistor1')}
-                           autoComplete="off"
-                           tabIndex="2"
-                           onChange={(e) => this.collectFloatValueFor('resistor1', e)}/>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left">
-                    <label htmlFor="omhslaw-R">Resistor 2 (Ohms)</label>
-                  </td>
-                  <td>
-                    <input id="resistor2" value={this.state.resistor2} disabled={this.wasLastCalculated('resistor2')}
-                           autoComplete="off"
-                           tabIndex="3"
-                           onChange={(e) => this.collectFloatValueFor('resistor2', e)}/>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left">
-                    <label htmlFor="omhslaw-W">Output Voltage</label>
-                  </td>
-                  <td>
-                    <input id="outputVoltage" value={this.state.outputVoltage} disabled={this.wasLastCalculated('outputVoltage')}
-                           autoComplete="off"
-                           tabIndex="4"
-                           onChange={(e) => this.collectFloatValueFor('outputVoltage', e)}/>
-                  </td>
-                </tr>
-                <tr>
-                  <td align="left">
-                    <button type="button" tabIndex="6" onClick={() => this.handleClear()}>Clear</button>
-                  </td>
-                  <td align="right">
-                    <button type="submit" tabIndex="5">Calculate</button>
-                  </td>
-                </tr>
-                </tbody>
-              </table>
-            </form>
-          </div>
-        </div>
-      </div>
+      <Card className="equationBox">
+        <form onSubmit={(e) => this.handleSubmit(e)}>
+          <CardContent className="equationBoxInner">
+            <p>Supply at least three of the values to calculate the fourth.</p>
+            <p>The base equation for a resistor divider network is <br /> Vo = (Vs * R2) / (R1 + R2)</p>
+            <TextField
+              id="full-width"
+              label="Input Voltage"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              disabled={wasLastCalculated('inputVoltage')}
+              fullWidth
+              name="inputVoltage"
+              margin="normal"
+              onChange={(e) => this.collectFloatValueFor('inputVoltage', e)}
+              value={this.state.inputVoltage}
+            />
+            <TextField
+              id="full-width"
+              label="Resistor 1 (Ohms)"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              disabled={wasLastCalculated('resistor1')}
+              fullWidth
+              name="resistor1"
+              margin="normal"
+              onChange={(e) => this.collectFloatValueFor('resistor1', e)}
+              value={this.state.resistor1}
+            />
+            <TextField
+              id="full-width"
+              label="Resistor 2 (Ohms)"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              disabled={wasLastCalculated('resistor2')}
+              fullWidth
+              name="resistor2"
+              margin="normal"
+              onChange={(e) => this.collectFloatValueFor('resistor2', e)}
+              value={this.state.resistor2}
+            />
+            <TextField
+              id="full-width"
+              label="Output Voltage"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              disabled={wasLastCalculated('outputVoltage')}
+              fullWidth
+              name="outputVoltage"
+              margin="normal"
+              onChange={(e) => this.collectFloatValueFor('outputVoltage', e)}
+              value={this.state.outputVoltage}
+            />
+          </CardContent>
+          <CardActions>
+            <Button type="button" tabIndex="6" onClick={() => this.handleClear()}>Clear</Button>
+            <Button type="submit" tabIndex="5" color="primary" variant="raised" style={{marginLeft: 'auto'}}>Calculate</Button>
+          </CardActions>
+        </form>
+      </Card>
     );
   }
 
